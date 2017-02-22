@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+			canvas{
+				border: 1px solid red;
+			}
+        </style>
+    </head>
+    <body>
+    	<canvas width="600" height="400"></canvas>
+    </body>
+
+    <script>
+    var vas=document.querySelector('canvas');
+    var ctx=vas.getContext('2d');
+    
+    var start = -Math.PI / 2;
+    for( var i=0; i < 3; i++){
+        ctx.beginPath();
+        ctx.moveTo(300,200);
+        ctx.arc( 300, 200 ,100, start, start += 2*Math.PI / 3);
+        ctx.fillStyle=['red','pink','yellow'][i];
+        ctx.fill();
+    }
+    </script>
+</html>
